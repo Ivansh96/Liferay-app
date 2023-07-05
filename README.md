@@ -15,4 +15,4 @@
                       - For example: for employee module path will be "C: test-workspace\\modules\\test-web\\src\\main\\resources\\META-INF\\resources\\csv\\employee.zip"
                       - Put yout zip into csv folder, run the app, choose "Import csv files" button and upload your zip
   ![image](https://github.com/Ivansh96/Liferay-app-practice/assets/128375202/33188dce-21a3-4d2d-b477-e3dba9ba52f5)
-practice/assets/128375202/033e5967-e964-42bc-a721-bf89e9e8b118)
+
