@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.test.model.Electronics">
+		<field name="uuid" type="String" />
+		<field name="electronicsId" type="long" />
+		<field name="name" type="String" />
+		<field name="price" type="long" />
+		<field name="count" type="int" />
+		<field name="inStock" type="boolean" />
+		<field name="archive" type="boolean" />
+		<field name="description" type="String" />
+		<field name="ElectroTypeId" type="long" />
+	</model>
+	<model name="com.test.model.ElectroType">
+		<field name="uuid" type="String" />
+		<field name="ElectroTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="com.test.model.Employee">
+		<field name="uuid" type="String" />
+		<field name="employeeId" type="long" />
+		<field name="firstname" type="String" />
+		<field name="lastname" type="String" />
+		<field name="patronymic" type="String" />
+		<field name="birthdate" type="Date" />
+		<field name="gender" type="boolean" />
+		<field name="PositionTypeId" type="long" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="com.test.model.PositionType">
+		<field name="uuid" type="String" />
+		<field name="PositionTypeId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.test.model.Purchase">
+		<field name="uuid" type="String" />
+		<field name="purchaseId" type="long" />
+		<field name="purchaseDate" type="Date" />
+		<field name="employeeId" type="long" />
+		<field name="electronicsId" type="long" />
+		<field name="purchaseTypeId" type="long" />
+	</model>
+	<model name="com.test.model.PurchaseType">
+		<field name="uuid" type="String" />
+		<field name="purchaseTypeId" type="long" />
+		<field name="name" type="String" />
+	</model>
+</model-hints>

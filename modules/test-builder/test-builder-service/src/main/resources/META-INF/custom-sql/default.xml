@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<custom-sql>  
+  <sql id="getTotalPrice">
+     <![CDATA[
+       
+       SELECT * FROM test_electronics WHERE ElectroTypeId = ?
+       
+     ]]>  
+  </sql>
+  
+  <sql id="getByPurchase">
+     <![CDATA[
+       
+       SELECT test_electronics.* FROM test_electronics
+       LEFT JOIN test_purchase ON test_electronics.electronicsId = test_purchase.electronicsId
+       WHERE test_purchase.purchaseTypeId = ?
+       
+     ]]>  
+  </sql>
+  
+  <sql id="getElectronicsCount">
+     <![CDATA[
+       
+       SELECT test_purchase.* FROM test_purchase
+       LEFT JOIN test_electronics ON test_purchase.electronicsId = test_electronics.electronicsId
+       WHERE test_electronics.ElectroTypeId = ? AND price <= ? AND test_purchase.purchaseDate > ?
+       
+     ]]>  
+  </sql>
+  
+  <sql id="getEmployeeResults">
+     <![CDATA[
+       
+      SELECT DISTINCT test_employee.* FROM test_employee
+      LEFT JOIN test_purchase ON test_employee.employeeId = test_purchase.employeeId
+      WHERE test_employee.PositionTypeId = ?
+       
+     ]]>  
+  </sql>
+  
+   <sql id="getEmployeeElectronicsResults">
+     <![CDATA[
+       
+     SELECT test_electronics.* FROM test_electronics
+     LEFT JOIN test_purchase ON test_electronics.electronicsId  = test_purchase.electronicsId
+     WHERE test_purchase.employeeId = ?
+       
+     ]]>  
+  </sql>
+  
+  </custom-sql>   

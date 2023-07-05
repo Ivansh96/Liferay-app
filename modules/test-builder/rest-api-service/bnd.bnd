@@ -1,0 +1,4 @@
+Bundle-Name: rest-api-service
+Bundle-SymbolicName: com.test.restapi
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
