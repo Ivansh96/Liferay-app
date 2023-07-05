@@ -8,6 +8,7 @@
 
 - All modules are located in "modules" folder. (path: test-workspace\modules)
 - ![image](https://github.com/Ivansh96/Liferay-app-practice/assets/128375202/9084445b-4406-4b0d-96c9-ea899b5bf240)
+- 
 
 - To upload csv file: - Find csv folder in desired module
 - ![image](https://github.com/Ivansh96/Liferay-app-practice/assets/128375202/e3b79286-25b6-4f65-85a0-062e1dfac32d)
