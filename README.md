@@ -2,7 +2,7 @@
 - Go to http://localhost:2020/web/guest
 - Use default: test@liferay.com (password - "test") to register
 - ![image](https://github.com/Ivansh96/Liferay-app-practice/assets/128375202/a549c245-ebd3-4da4-a29a-2da1aadef7b5)
- to get access to pages with data, you've to redeploy desired module and refresh the page.
+ to get access to pages with data, you've to start all modules and refresh the page.
 - ![image](https://github.com/Ivansh96/Liferay-app-practice/assets/128375202/286059f5-c392-459e-bf68-b085bf782c8f)
 
 
