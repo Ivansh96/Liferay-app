@@ -11,7 +11,6 @@
 	List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
 %>
 
-
 <portlet:renderURL var="importCsvEmployeeRenderURL">
 	<portlet:param name="mvcPath" value="/import-employee.jsp" />
 </portlet:renderURL>
@@ -21,7 +20,6 @@
 		class="glyphicon glyphicon-plus"></i> Import CSV files
 	</a>
 </div>
-
 
 <portlet:renderURL var="addEmployeeRenderURL">
 	<portlet:param name="mvcPath" value="/add-employee.jsp" />
@@ -80,10 +78,4 @@
 	</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
-
-
-
-
-
-
 

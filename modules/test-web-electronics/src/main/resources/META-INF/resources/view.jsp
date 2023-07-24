@@ -9,7 +9,6 @@
 	List<Electronics> electronicsList = (List<Electronics>) request.getAttribute("electronicsList");
 %>
 
-
 <portlet:renderURL var="importCsvElectronicsRenderURL">
 	<portlet:param name="mvcPath" value="/import-electronics.jsp" />
 </portlet:renderURL>
@@ -19,7 +18,6 @@
 		class="glyphicon glyphicon-plus"></i> Import CSV files
 	</a>
 </div>
-
 
 <portlet:renderURL var="addElectronicsRenderURL">
 	<portlet:param name="mvcPath" value="/add-electronics.jsp" />
@@ -54,8 +52,7 @@
 		<liferay-ui:search-container-column-text name="Edit">
 			<portlet:renderURL var="updateElectronicsRenderURL">
 				<portlet:param name="mvcPath" value="/update-electronics.jsp" />
-				<portlet:param name="electronicsId"
-					value="${electronics.electronicsId}" />
+				<portlet:param name="electronicsId" value="${electronics.electronicsId}" />					
 				<portlet:param name="name" value="${electronics.name}" />
 				<portlet:param name="price" value="${electronics.price}" />
 				<portlet:param name="count" value="${electronics.count}" />

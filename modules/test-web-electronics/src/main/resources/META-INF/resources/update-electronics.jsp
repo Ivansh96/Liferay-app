@@ -8,7 +8,6 @@
 <aui:form action="${updateElectronicsActionURL}" name="electronicsForm" method="POST"/>
 
 <%
-
    String electronicsId = renderRequest.getParameter("electronicsId");
    String name = renderRequest.getParameter("name");
    String price = renderRequest.getParameter("price");

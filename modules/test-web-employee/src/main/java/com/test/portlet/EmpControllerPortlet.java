@@ -1,6 +1,6 @@
 package com.test.portlet;
 
-import com.test.constants.EmployeeControllerPortletKeys;
+import com.test.constants.EmpControllerPortletKeys;
 import com.test.model.Employee;
 import com.test.service.EmployeeLocalService;
 
@@ -46,12 +46,12 @@ import org.osgi.service.component.annotations.Reference;
  */
 @Component(immediate = true, property = { "com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.header-portlet-css=/css/main.css", "com.liferay.portlet.instanceable=true",
-		"javax.portlet.display-name=EmployeeController", "javax.portlet.init-param.template-path=/",
+		"javax.portlet.display-name=EmpController", "javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + EmployeeControllerPortletKeys.EMPLOYEECONTROLLER,
+		"javax.portlet.name=" + EmpControllerPortletKeys.EMPCONTROLLER,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user" }, service = Portlet.class)
-public class EmployeeControllerPortlet extends MVCPortlet {
+public class EmpControllerPortlet extends MVCPortlet {
 
 	private static final String COMMA_DELIMITER = ",";
 
@@ -105,7 +105,6 @@ public class EmployeeControllerPortlet extends MVCPortlet {
 				SessionErrors.add(actionRequest, "wrongDate");
 			}
 		}
-
 	}
 
 	@Override
@@ -177,9 +176,9 @@ public class EmployeeControllerPortlet extends MVCPortlet {
 	public void importCsvEmployee(ActionRequest actionRequest, ActionResponse actionResponse)
 			throws IOException, ParseException {
 
-		String pathZip = "D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web\\src\\main\\resources\\META-INF\\resources\\csv\\employee.zip";
+		String pathZip = "D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web-employee\\src\\main\\resources\\META-INF\\resources\\csv\\employee.zip";
 		File destDir = new File(
-				"D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web\\src\\main\\resources\\META-INF\\resources\\csv");
+				"D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web-employee\\src\\main\\resources\\META-INF\\resources\\csv");
 
 		DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -193,7 +192,7 @@ public class EmployeeControllerPortlet extends MVCPortlet {
 
 		while (zipEntry != null) {
 
-			pathFile = "D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web\\src\\main\\resources\\META-INF\\resources\\csv\\"
+			pathFile = "D:\\LiferayDev\\Workspace\\test-workspace\\modules\\test-web-employee\\src\\main\\resources\\META-INF\\resources\\csv\\"
 					+ zipEntry.getName();
 
 			File newFile = newFile(destDir, zipEntry);

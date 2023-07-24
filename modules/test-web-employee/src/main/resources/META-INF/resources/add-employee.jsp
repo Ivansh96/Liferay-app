@@ -4,17 +4,14 @@
 <%@page import="com.test.service.PositionTypeLocalService"%>
 <%@ include file="init.jsp" %>
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
-
 <portlet:defineObjects />
 
+<portlet:actionURL var="addEmployeeURL" name="addEmployee"/>
+ 
+<h2>Add employee form</h2>
 
-<portlet:actionURL name="addEmployee" var="addEmployeeActionURL"/>
+<aui:form action="${addEmployeeURL}" name="employeeForm" method="POST">
 
-
-<h2>New employee form</h2>
-
-
-<aui:form action="${addEmployeeActionURL}" name="employeeForm" method="POST">
    <aui:input name="firstname" >
       <aui:validator name="required"/>
       <aui:validator name="maxLength" errorMessage="You've reached the limit">75</aui:validator>

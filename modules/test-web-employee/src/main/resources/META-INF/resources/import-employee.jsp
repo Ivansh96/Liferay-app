@@ -7,7 +7,7 @@
 <portlet:actionURL name="importCsvEmployee" var="importCsvEmployeeActionURL" windowState="normal"></portlet:actionURL>
 
 <p>
-	<b>Add user to Liferay DB from CSV</b>
+	<b>Add employee to Liferay DB from CSV</b>
 </p>
 
 <form action="${importCsvEmployeeActionURL}" enctype="multipart/form-data" method="post" id="csvEmployeeForm">

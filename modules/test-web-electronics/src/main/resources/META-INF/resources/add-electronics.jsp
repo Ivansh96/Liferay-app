@@ -2,11 +2,11 @@
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 <portlet:defineObjects/>
 
-<portlet:actionURL name="addElectronics" var="addElectronicsActionURL" />
-
+<portlet:actionURL var="addElectronicsURL" name="addElectronics"/>
+ 
 <h2>New electronics form</h2>
 
-<aui:form action="${addElectronicsActionURL}" name="electronicsForm" method="POST">
+<aui:form action="${addElectronicsURL}" name="electronicsForm" method="POST">
    <aui:input name="name" >
       <aui:validator name="required"/>
       <aui:validator name="maxLength" errorMessage="You've reached the limit">75</aui:validator>
@@ -49,4 +49,4 @@
    </aui:input>
    
    <aui:button type="submit" name="" value="Submit"></aui:button>
-</aui:form>  
+</aui:form> 

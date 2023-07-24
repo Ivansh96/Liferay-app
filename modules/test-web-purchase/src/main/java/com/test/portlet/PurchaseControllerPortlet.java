@@ -93,7 +93,6 @@ public class PurchaseControllerPortlet extends MVCPortlet {
 		List<Employee> empList = employeeLocalService.getElectroTypeEmployees(electronics.getElectroTypeId());
 
 		int actualCount = electronics.getCount();
-
 		Date currentDate = new Date();
 
 		if (actualCount > 0) {
@@ -168,7 +167,7 @@ public class PurchaseControllerPortlet extends MVCPortlet {
 	}
 
 	@ProcessAction(name = "updatePurchase")
-	public void updatePurchase(ActionRequest actionRequest, ActionResponse actionResponse) {
+	public void updatePurchase(ActionRequest actionRequest, ActionResponse actionResponse) throws PortalException {
 
 		DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -184,29 +183,51 @@ public class PurchaseControllerPortlet extends MVCPortlet {
 			log.error(e.getCause(), e);
 		}
 
+		Electronics electronics = electronicsLocalService.getElectronics(electronicsId);
+		List<Employee> empList = employeeLocalService.getElectroTypeEmployees(electronics.getElectroTypeId());
+
 		Date currentDate = new Date();
 
 		if (Validator.isNotNull(purchase)) {
 
-			if (purchaseDate.before(currentDate)) {
+			for (int i = 0; i < empList.size(); i++) {
 
-				purchase.setPurchaseDate(purchaseDate);
-				purchase.setEmployeeId(employeeId);
-				purchase.setElectronicsId(electronicsId);
+				if (empList.get(i).getEmployeeId() == employeeId) {
 
-				purchaseLocalService.updatePurchase(purchase);
+					if (purchaseDate.before(currentDate)) {
 
-			} else {
+						purchase.setPurchaseDate(purchaseDate);
+						purchase.setEmployeeId(employeeId);
+						purchase.setElectronicsId(electronicsId);
 
-				try {
+						purchaseLocalService.updatePurchase(purchase);
+						i = empList.size();
 
-					throw new IllegalAccessException();
-				} catch (Exception e) {
+					} else {
 
-					SessionErrors.add(actionRequest, "wrongDate");
+						try {
+
+							throw new IllegalAccessException();
+						} catch (Exception e) {
+
+							SessionErrors.add(actionRequest, "wrongDate");
+						}
+					}
+
+					i = empList.size();
+
+				} else if (i == empList.size() - 1) {
+
+					try {
+
+						throw new IllegalAccessException();
+
+					} catch (Exception e) {
+
+						SessionErrors.add(actionRequest, "wrongEtype");
+					}
 				}
 			}
-
 		}
 	}
 

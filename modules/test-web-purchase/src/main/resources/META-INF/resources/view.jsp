@@ -55,10 +55,8 @@
 				<portlet:param name="purchaseId" value="${purchase.purchaseId}" />
 				<portlet:param name="purchaseDate" value="${purchase.purchaseDate}" />
 				<portlet:param name="employeeId" value="${purchase.employeeId}" />
-				<portlet:param name="electronicsId"
-					value="${purchase.electronicsId}" />
-				<portlet:param name="purchaseTypeId"
-					value="${purchase.purchaseTypeId}" />
+				<portlet:param name="electronicsId" value="${purchase.electronicsId}" />					
+				<portlet:param name="purchaseTypeId" value="${purchase.purchaseTypeId}" />					
 			</portlet:renderURL>
 			<a href="${updatePurchaseRenderURL}">Edit</a>
 		</liferay-ui:search-container-column-text>
